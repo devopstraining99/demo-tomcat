@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeployment
+spec:
+  strategy:
+    type: RollingUpdate
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      name: mypod
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: mywebapp
+          imagePullPolicy: Always
+          image: shailbrox/newapp:v1
+          ports:
+            - containerPort: 80  
