@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydeployment
+  name: mytomcat-deployment
 spec:
   strategy:
     type: RollingUpdate
   replicas: 2
   selector:
     matchLabels:
-      app: frontend
+      app: tomcat-frontend
   template:
     metadata:
-      name: mypod
+      name: mypod1
       labels:
-        app: frontend
+        app: tomcat-frontend
     spec:
       containers:
-        - name: mywebapp
+        - name: tomcat 
           imagePullPolicy: Always
-          image: shailbrox/newapp:v1
+          image: shailbrox/tomcat:v1
           ports:
-            - containerPort: 80  
+            - containerPort: 8080
