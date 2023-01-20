@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mytomcat-deployment
+  name: mytomcat-stage-deployment
 spec:
   strategy:
     type: RollingUpdate
   replicas: 2
   selector:
     matchLabels:
-      app: tomcat-frontend
+      app: tomcat-stage-frontend
   template:
     metadata:
       name: mypod1
       labels:
-        app: tomcat-frontend
+        app: tomcat-stage-frontend
     spec:
       containers:
         - name: tomcat 
