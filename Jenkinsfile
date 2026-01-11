@@ -31,11 +31,11 @@ pipeline {
   post {
     success {
         echo 'Jenkins Job Ran Succesfully'
-        mail bcc: '', body: 'jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job Ran Succesfully', to: 'devs@exmaple.com'
+        //mail bcc: '', body: 'jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job Ran Succesfully', to: 'devs@exmaple.com'
     }
     failure {
         echo 'Jenkins Job Failed'
-        mail bcc: '', body: 'jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job Failed', to: 'devs@exmaple.com'
+        //mail bcc: '', body: 'jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job Failed', to: 'devs@exmaple.com'
     }
   }
 } 
