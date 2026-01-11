@@ -10,6 +10,16 @@ pipeline {
         steps {
             sh 'mvn install'   
         }
-     }
+    }
+    stage("Build Docker Image") {
+        steps {
+            sh 'docker build -t gauravdemo06/myapp .'
+        }
+    }
+    stage("Push Docker Image to Dockerhub") {
+        steps {
+            sh 'docker push gauravdemo06/myapp'
+        }
+    }
   }
 } 
